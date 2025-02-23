@@ -2,7 +2,7 @@ let
     # We use a version of Nixpkgs pinned to a release branch.
     nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-24.05";
     # We explicitly set config and overlays to avoid them being inadvertently overridden by global configuration.
-    pkgs = import {
+    pkgs = import nixpkgs {
         config = {};
         overlays = [];
     };
