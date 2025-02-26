@@ -20,8 +20,6 @@ let
         in
             [ x y];
 in
-    [
-        unspecified
-        specified
-        in_let
-    ]
+    {
+        inherit unspecified specified in_let;
+    }
