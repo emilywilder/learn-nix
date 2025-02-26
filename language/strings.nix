@@ -1,4 +1,16 @@
 let
-    name = "Nix";
+    interpolation =
+        let
+            name = "Nix";
+        in
+        "hello ${name}";
+    multiline =
+        ''
+        multi
+            line
+        string
+        '';
 in
-"hello ${name}"
+    {
+        inherit interpolation multiline;
+    }
