@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -n "$1" ]; then
-  nix-instantiate --eval "$@"
+  nix-instantiate --eval --strict "$@"
 else
   echo "usage: $0 <filename.nix>" >&2
   exit 1
