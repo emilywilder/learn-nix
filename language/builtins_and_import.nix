@@ -1,4 +1,5 @@
-{
-    "builtins.toString (import ./1plus2.nix)" =
-        builtins.toString (import ./1plus2.nix);
-}
+let
+    pkgs = import <nixpkgs> {};
+    oneplustwo = import ./1plus2.nix;
+in
+pkgs.lib.strings.toUpper "one plus two equals " + builtins.toString oneplustwo
