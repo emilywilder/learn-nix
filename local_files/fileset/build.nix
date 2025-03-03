@@ -1,13 +1,15 @@
 { stdenv, lib }:
 let
   fs = lib.fileset;
-  sourceFiles = fs.difference
-    ./.
-    (fs.unions [
-        (fs.maybeMissing ./result)
-        (fs.fileFilter (file: file.hasExt "nix") ./.)
-        ./npins
-    ]);
+  sourceFiles = fs.unions [
+    ./hello.txt
+    ./world.txt
+    ./build.sh
+    (fs.fileFilter
+        (file: file.hasExt "c" || file.hasExt "h")
+        ./src
+    )
+  ];
 in
 
 fs.trace sourceFiles
@@ -19,7 +21,6 @@ stdenv.mkDerivation {
     fileset = sourceFiles;
   };
   postInstall = ''
-    mkdir $out
-    cp -v {hello,world}.txt $out
+    cp -vr . $out
   '';
 }
