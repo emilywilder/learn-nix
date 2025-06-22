@@ -1,14 +1,14 @@
 let
-   f = x : x + 1;
-   g = x: x.a;
+    f = x : x + 1;
+    g = x: x.a;
 
-   v = { a = 1; };
+    v = { a = 1; };
 
-   h = x: y: x + y;
-   i = {a, b}: a + b;
-   j = {a ? 0, b ? 0}: a + b;
-   k = {a, b, ...}: a + b;
-   m = {a, b, ...}@args: a + b + args.c;
+    h = x: y: x + y;
+    i = {a, b}: a + b;
+    j = {a ? 0, b ? 0}: a + b;
+    k = {a, b, ...}: a + b;
+    m = {a, b, ...}@args: a + b + args.c;
 in
 {
     "v" = v;
