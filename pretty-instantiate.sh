@@ -1,4 +1,3 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-[ "$*" ] && nix-instantiate --eval --strict $* | nixfmt
-exit $?
+nix-instantiate --eval --strict $* | nixfmt
