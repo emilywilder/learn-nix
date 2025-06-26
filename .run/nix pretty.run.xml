@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="nix pretty" type="BashProRunConfiguration">
+    <option name="defaultInterpreter" value="none" />
+    <option name="interpreterParameters" value="exec ." />
+    <option name="interpreterPath" value="direnv" />
+    <option name="scriptParameters" value="$FilePathRelativeToProjectRoot$" />
+    <option name="scriptPath" value="$PROJECT_DIR$/pretty-instantiate.sh" />
+    <RunnerSettings bashdbVersion="Automatic" bashPathMapper="Automatic" RunnerId="pro.bashsupport.shDebugRunner" />
+    <method v="2" />
+  </configuration>
+</component>
