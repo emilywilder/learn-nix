@@ -1,28 +1,15 @@
 let
-    f = x : x + 1;
-    g = x: x.a;
-
-    v = { a = 1; };
-
-    h = x: y: x + y;
-    i = {a, b}: a + b;
-    j = {a ? 0, b ? 0}: a + b;
-    k = {a, b, ...}: a + b;
-    m = {a, b, ...}@args: a + b + args.c;
+  f = x : x + 1;
+  g = x: y: x + y;
 in
+builtins.trace ''
+
+Definitions:
+  f = x : x + 1
+  g = x: y: x + y
+
+Applications:''
 {
-    "v" = v;
-    "f 2" = (f 2);
-    "g { a = 1; }" = (g { a = 1; });
-    "f v" = (g v);
-    "(x: x + 1) 1" = (x: x + 1) 1;
-    "[ g v ]" = [ g v ];
-    "[ (g v) ]" =  [ (g v) ];
-    "h 1" = h 1;
-    "h 1 2" = h 1 2;
-    "i { a = 1; b = 2; }" = i { a = 1; b = 2; };
-    "j { a = 1; }" = j { a = 1; };
-    "j { }" = j { };
-    "k { a = 1; b = 2; c = 3; }" = k { a = 1; b = 2; c = 3; };
-    "m { a = 1; b = 2; c = 3; }" = m { a = 1; b = 2; c = 3; };
+  "f 1" = f 1;
+  "g 1 2" = g 1 2;
 }
