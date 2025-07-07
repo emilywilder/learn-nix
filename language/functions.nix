@@ -16,6 +16,7 @@ Definitions:
 Single argument functions:
   f = x : x + 1
   f' = x: x.a
+Multiple arguments (currying):
   g = x: y: x + y
 Attribute set argument:
   h = { a, b }: a + b
@@ -29,6 +30,9 @@ Applications:''
   "f 1" = f 1;
   "f' { a = 1; }" = f' { a = 1; };
   "f' f'v" = f' f'v;
+  "[ (f 1) ]" = [ (f 1) ];
+  "[ f 1 ]" = [ f 1 ];
+  "g 1" = g 1;
   "g 1 2" = g 1 2;
   "h { a = 1; b = 2; }" = h { a = 1; b = 2; };
   "j { a = 1; }" = j { a = 1; };
