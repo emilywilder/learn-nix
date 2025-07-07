@@ -22,7 +22,7 @@ Attribute set argument:
   h = { a, b }: a + b
   j = { a, b ? 2 }: a + b
   k = { a, b, ... }: a + b
-Named attribute set argument:
+Named attribute set argument (at syntax):
   m = args@{ a, b, ... }: a + b + args.c
 
 Applications:''
