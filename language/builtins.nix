@@ -31,6 +31,7 @@ derivationAttrs = {
   };
 
   #  abort s
+  #   <Not Implemented> like builtins.throw, but cannot be caught
   #  add e1 e2
   "builtins.add 1 2" = builtins.add 1 2;
   #  addDrvOutputDependencies s
@@ -148,6 +149,8 @@ derivationAttrs = {
   #  traceVerbose e1 e2
   #  true
   #  tryEval e
+  # FIXME: try and get the double quotes to not display escaped
+  "builtins.tryEval (throw \"error\")" = builtins.tryEval (throw "error");
   #  typeOf e
   #  unsafeDiscardOutputDependency s
   #  builtins.addDrvOutputDependencies
