@@ -32,14 +32,18 @@ derivationAttrs = {
 
   #  abort s
   #   <Not Implemented> like builtins.throw, but cannot be caught
+
   #  add e1 e2
   "builtins.add 1 2" = builtins.add 1 2;
+
   #  addDrvOutputDependencies s
   #  builtins.unsafeDiscardOutputDependency
   #  all pred list
   "builtins.all (gt 3) (lib.range 1 5)" = builtins.all (gt 3) (lib.range 1 5);
+
   #  any pred list
   "builtins.any (gt 3) (lib.range 1 5)" = builtins.any (gt 3) (lib.range 1 5);
+
   #  attrNames set
   #  attrValues set
   #  baseNameOf x
@@ -144,6 +148,7 @@ derivationAttrs = {
   #  toPath s
   #  toString e
   "builtins.toString ex_toString" = builtins.toString ex_toString;
+
   #  toXML e
   #  trace e1 e2
   #  traceVerbose e1 e2
@@ -151,6 +156,7 @@ derivationAttrs = {
   #  tryEval e
   # FIXME: try and get the double quotes to not display escaped
   "builtins.tryEval (throw \"error\")" = builtins.tryEval (throw "error");
+
   #  typeOf e
   #  unsafeDiscardOutputDependency s
   #  builtins.addDrvOutputDependencies
