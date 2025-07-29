@@ -15,16 +15,17 @@ let
 in
 builtins.trace ''
 
+Definitions:
+  ex_toString = { a = 1; __toString = self: ...; };
+  gt = x: y: y > x;
+  derivationAttrs = {
+    name = builtins.baseNameOf ./.;
+    system = builtins.currentSystem;
+    builder = "/bin/seashell";
+  };
+  ex_attrs = { a = 1; b = 2; };
 
-ex_toString = { a = 1; __toString = self: ...; };
-gt = x: y: y > x;
-derivationAttrs = {
-  name = builtins.baseNameOf ./.;
-  system = builtins.currentSystem;
-  builder = "/bin/seashell";
-};
-ex_attrs = { a = 1; b = 2; };
-''
+Applications:''
 {
   #  derivation attrs
   "derivation derivationAttrs" = {
