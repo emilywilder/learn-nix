@@ -75,11 +75,24 @@ Applications:''
   # FIXME: demonstrate how this functions in a debugging session
 
   #  builtins
+  "builtins.isAttrs builtins" = builtins.isAttrs builtins;
+
   #  catAttrs attr list
+  "builtins.catAttrs \"a\" [{a=1;} {a=2;} {b=3;} {a=4;}]" = builtins.catAttrs "a" [{a=1;} {a=2;} {b=3;} {a=4;}];
+
   #  ceil double
+  "builtins.ceil 3.1415926535" = builtins.ceil 3.1415926535;
+
   #  compareVersions s1 s2
+  "builtins.compareVersions \"1\" \"1.1\"" = builtins.compareVersions "1" "1.1";
+
   #  concatLists lists
+  "builtins.concatLists [[ 1 2 ] [ 3 ]]" = builtins.concatLists [[ 1 2 ] [ 3 ]];
+
   #  concatMap f list
+  # example from https://noogle.dev/f/builtins/concatMap
+  "concatMap (x: [x] ++ [\"z\"]) [\"a\" \"b\"]" = builtins.concatMap (x: [x] ++ ["z"]) ["a" "b"];
+
   #  concatStringsSep separator list
   #  convertHash args
   #  currentSystem
