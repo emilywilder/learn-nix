@@ -37,7 +37,8 @@ derivationAttrs = {
   "builtins.add 1 2" = builtins.add 1 2;
 
   #  addDrvOutputDependencies s
-  #  builtins.unsafeDiscardOutputDependency
+  # TODO:
+
   #  all pred list
   "builtins.all (gt 3) (lib.range 1 5)" = builtins.all (gt 3) (lib.range 1 5);
 
@@ -68,7 +69,6 @@ derivationAttrs = {
   #  elemAt xs n
   #  false
   #  fetchClosure args
-  #  builtins.storePath
   #  fetchGit args
   #  fetchTarball args
   #  fetchTree input
@@ -76,7 +76,6 @@ derivationAttrs = {
   #  filter f list
   #  filterSource e1 e2
   #  findFile search-path lookup-path
-  #  builtins.nixPath
   #  flakeRefToString attrs
   #  floor double
   #  foldl' op nul list
@@ -123,7 +122,6 @@ derivationAttrs = {
   #  parseFlakeRef flake-ref
   #  partition pred list
   #  path args
-  #  builtins.filterSource
   #  pathExists path
   #  placeholder output
   #  readDir path
@@ -137,7 +135,6 @@ derivationAttrs = {
   #  splitVersion s
   #  storeDir
   #  storePath path
-  #  builtins.fetchClosure
   #  stringLength e
   #  sub e1 e2
   #  substring start len s
@@ -159,9 +156,11 @@ derivationAttrs = {
 
   #  typeOf e
   #  unsafeDiscardOutputDependency s
-  #  builtins.addDrvOutputDependencies
-  #  builtins.addDrvOutputDependencies
+  # TODO:
+
   #  unsafeDiscardStringContext s
+  # TODO:
+
   #  warn e1 e2
   #  zipAttrsWith f list
 }
