@@ -90,8 +90,10 @@ Applications:''
   "builtins.concatLists [[ 1 2 ] [ 3 ]]" = builtins.concatLists [[ 1 2 ] [ 3 ]];
 
   #  concatMap f list
-  # example from https://noogle.dev/f/builtins/concatMap
-  "concatMap (x: [x] ++ [\"z\"]) [\"a\" \"b\"]" = builtins.concatMap (x: [x] ++ ["z"]) ["a" "b"];
+  #  example inspired from https://noogle.dev/f/builtins/concatMap
+  "builtins.concatMap (x: builtins.concatLists [[x] [9]]) [1 2]" = builtins.concatMap
+    (x: builtins.concatLists [[x] [9]])
+    [1 2];
 
   #  concatStringsSep separator list
   #  convertHash args
