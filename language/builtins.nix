@@ -11,6 +11,7 @@ let
     builder = "/bin/seashell";
   };
   drv = derivation derivationAttrs;
+  ex_attrs = { a = 1; b = 2; };
 in
 builtins.trace ''
 
@@ -22,6 +23,7 @@ derivationAttrs = {
   system = builtins.currentSystem;
   builder = "/bin/seashell";
 };
+ex_attrs = { a = 1; b = 2; };
 ''
 {
   #  derivation attrs
@@ -46,7 +48,11 @@ derivationAttrs = {
   "builtins.any (gt 3) (lib.range 1 5)" = builtins.any (gt 3) (lib.range 1 5);
 
   #  attrNames set
+  "builtins.attrNames ex_attrs" = builtins.attrNames ex_attrs;
+
   #  attrValues set
+  "builtins.attrValues ex_attrs" = builtins.attrValues ex_attrs;
+
   #  baseNameOf x
   #  bitAnd e1 e2
   #  bitOr e1 e2
