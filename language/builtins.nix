@@ -71,6 +71,9 @@ Applications:''
   "builtins.bitXor 1 1" = builtins.bitXor 1 1;
 
   #  break v
+  "builtins.break \"Not in debug mode\"" = builtins.break "Not in debug mode";
+  # FIXME: demonstrate how this functions in a debugging session
+
   #  builtins
   #  catAttrs attr list
   #  ceil double
