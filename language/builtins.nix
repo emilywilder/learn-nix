@@ -12,6 +12,8 @@ let
   };
   drv = derivation derivationAttrs;
   ex_attrs = { a = 1; b = 2; };
+  ex_abs_path = "/this/is/an/absolute/path";
+  ex_rel_path = "./this/is/a/relative/path";
 in
 builtins.trace ''
 
@@ -24,6 +26,8 @@ Definitions:
     builder = "/bin/seashell";
   };
   ex_attrs = { a = 1; b = 2; };
+  ex_abs_path = "/this/is/an/absolute/path";
+  ex_rel_path = "./this/is/a/relative/path";
 
 Applications:''
 {
@@ -55,6 +59,8 @@ Applications:''
   "builtins.attrValues ex_attrs" = builtins.attrValues ex_attrs;
 
   #  baseNameOf x
+  "builtins.baseNameOf ex_abs_path" = builtins.baseNameOf ex_abs_path;
+
   #  bitAnd e1 e2
   #  bitOr e1 e2
   #  bitXor e1 e2
