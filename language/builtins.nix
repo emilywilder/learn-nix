@@ -62,8 +62,14 @@ Applications:''
   "builtins.baseNameOf ex_abs_path" = builtins.baseNameOf ex_abs_path;
 
   #  bitAnd e1 e2
+  "builtins.bitAnd 1 0" = builtins.bitAnd 1 0;
+
   #  bitOr e1 e2
+  "builtins.bitOr 1 0" = builtins.bitOr 1 0;
+
   #  bitXor e1 e2
+  "builtins.bitXor 1 1" = builtins.bitXor 1 1;
+
   #  break v
   #  builtins
   #  catAttrs attr list
