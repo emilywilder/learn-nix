@@ -96,6 +96,7 @@ Applications:''
     [1 2];
 
   #  concatStringsSep separator list
+  "builtins.concatStringsSep \"/\" [ \"some\" \"path\" ];" = builtins.concatStringsSep "/" [ "some" "path" ];
   #  convertHash args
   #  currentSystem
   #  currentTime
