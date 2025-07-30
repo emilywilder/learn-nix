@@ -14,6 +14,11 @@ let
   ex_attrs = { a = 1; b = 2; };
   ex_abs_path = "/this/is/an/absolute/path";
   ex_rel_path = "./this/is/a/relative/path";
+  arg_convertHash = {
+    hash = "c47757abe4020b9168d0776f6c91617f9290e790ac2f6ce2bd6787c74ad88199";
+    toHashFormat = "sri";
+    hashAlgo = "sha256";
+  };
 in
 builtins.trace ''
 
@@ -28,6 +33,11 @@ Definitions:
   ex_attrs = { a = 1; b = 2; };
   ex_abs_path = "/this/is/an/absolute/path";
   ex_rel_path = "./this/is/a/relative/path";
+  arg_convertHash = {
+      hash = "c47757abe4020b9168d0776f6c91617f9290e790ac2f6ce2bd6787c74ad88199";
+      toHashFormat = "sri";
+      hashAlgo = "sha256";
+  };
 
 Applications:''
 {
@@ -97,7 +107,13 @@ Applications:''
 
   #  concatStringsSep separator list
   "builtins.concatStringsSep \"/\" [ \"some\" \"path\" ];" = builtins.concatStringsSep "/" [ "some" "path" ];
+
   #  convertHash args
+  #  Not implemented in Lix: https://git.lix.systems/lix-project/lix/issues/602
+  "builtins.convertHash arg_convertHash" = if builtins.hasAttr "convertHash" builtins
+    then builtins.convertHash arg_convertHash
+    else lib.warn "Nix implementation does not include builtins.convertHash" null;
+
   #  currentSystem
   #  currentTime
   #  deepSeq e1 e2
